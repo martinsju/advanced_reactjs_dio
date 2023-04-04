@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple application, using some advanced concepts of React, for studying purposes.
+Notes have been made in a private Notion page and the code itself is here.
 
 ## Available Scripts
 
