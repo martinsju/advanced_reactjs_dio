@@ -3,6 +3,10 @@
 This is a simple application, using some advanced concepts of React, for studying purposes.
 Notes have been made in a private Notion page and the code itself is here.
 
+The functionality of react lifecycle can be seen at the console log by the change of the "loading" state and some logs through the application.
+
+That's not the way I use to write apps, but since this is a only study purpose code, its full of logs.
+
 ## Available Scripts
 
 In the project directory, you can run:
