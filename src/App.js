@@ -1,6 +1,6 @@
 import React from 'react'
-import { ThemeContext, themes } from './Theme'
-import Twitter from './Twitter'
+import { ThemeContext, themes } from './components/ThemeSwitcher'
+import Twitter from './components/TwitterPage/Twitter'
 
 function App() {
 	return (
