@@ -31,24 +31,37 @@ function Twitter(props) {
 	//we dont have to call props anymore at every function
 	const theme = useContext(ThemeContext)
 
+	const { loading } = props
 	const [tweet, setTweet] = useState({
 		content: 'this is my tweet content',
 		author: 'Julia Agra'
 	})
+
 	// state = {
 	// 	tweet: true
 	// }
 
 	useEffect(() => {
-		return () => {}
+		const { posts, loading } = props
+		console.log('componentDidMount ', posts)
+		console.log('componentDidMount:loading ', loading)
 	}, [])
 
 	//componentDidMount and componentDidUpdate can be replaced by useEffect hook
+
 	// componentDidMount() {
 	// 	const { posts, loading } = this.props
 	// 	console.log('componentDidMount Twitter', posts)
 	// 	console.log('componentDidMount loading: ', loading)
 	// }
+
+	useEffect(() => {
+		if (loading === true) {
+			console.log('loading... ', loading)
+		} else {
+			console.log('done ', loading)
+		}
+	}, [loading])
 
 	// componentDidUpdate() {
 	// 	const { loading } = this.props
