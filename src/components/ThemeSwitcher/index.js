@@ -1,14 +1,22 @@
-import { createContext } from 'react'
+import React, { useContext } from 'react'
+import Switch from 'react-switch'
+import { ThemeContext } from 'styled-components'
 
-export const themes = {
-	primary: {
-		background: '#0C1A1D',
-		color: '#efefef'
-	},
-	secondary: {
-		background: '#efefef',
-		color: '#0C1A1D'
-	}
+export function ThemeSwitcher({ toggleTheme }) {
+	const theme = useContext(ThemeContext)
+
+	console.log(theme.title)
+	return (
+		<Switch
+			onChange={toggleTheme}
+			checked={theme.title === 'Dark'}
+			checkedIcon={false}
+			uncheckedIcon={false}
+			height={5}
+			width={25}
+			handleDiameter={10}
+			offColor='#333'
+			onColor='#fff'
+		/>
+	)
 }
-
-export const ThemeContext = createContext(themes.primary)

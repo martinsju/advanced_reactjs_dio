@@ -1,35 +1,45 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { ThemeContext } from '../ThemeSwitcher'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div``
+
 const TwitterCard = styled.div`
-	background-color: #f7f7f7;
-	color: #000;
+	background-color: ${(props) => props.theme.colors.primary};
+	color: ${(props) => props.theme.colors.color};
 
 	font-family: sans-serif;
 	font-size: 18px;
 	min-width: 30%;
 	max-width: 60%;
+	min-height: 120px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	gap: 20px;
 	margin: auto;
 	padding: 15px;
 
 	button {
-		background-color: #00d2ff;
-		color: #000;
+		background-color: ${(props) => props.theme.colors.secondary};
+		color: ${(props) => props.theme.colors.color};
 		outline: none;
-		border: 1px solid #00d2ff;
+		border: 1px solid ${(props) => props.theme.colors.secondary};
 		padding: 8px;
 		width: fit-content;
+		cursor: pointer;
 	}
+`
+
+const ButtonContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 20px;
 `
 
 function Twitter(props) {
 	//we dont have to call props anymore at every function
-	const theme = useContext(ThemeContext)
 
 	const { loading } = props
 	const [tweet, setTweet] = useState({
@@ -81,10 +91,21 @@ function Twitter(props) {
 	// }
 
 	return (
-		<TwitterCard>
-			<div>this is my Twitter functional component</div>
-			<button>Change Theme</button>
-		</TwitterCard>
+		<Container>
+			<TwitterCard>
+				{loading ? (
+					<p>loading...</p>
+				) : (
+					<>
+						<div>this is my Twitter functional component</div>
+						<ButtonContainer>
+							<button>[unabled] Remove Tweet</button>
+							<button>[unabled] Recover Tweet</button>
+						</ButtonContainer>
+					</>
+				)}
+			</TwitterCard>
+		</Container>
 	)
 }
 
